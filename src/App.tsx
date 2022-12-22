@@ -1,5 +1,6 @@
 import { Keyboard, Mousewheel } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import About from './components/sections/About';
 import Contact from './components/sections/Contact';
 import Hero from './components/sections/Hero';
