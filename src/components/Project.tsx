@@ -1,37 +1,44 @@
 import { AiFillGithub } from 'react-icons/ai';
 
 type Props = {
-  src?: string;
+  id: number;
   title: string;
+  thumbnail?: string;
   gitHubURL?: string;
-  demoURL?: string;
+  siteURL?: string;
 };
 
-const Project = ({ src, title, gitHubURL, demoURL }: Props) => {
+const Project = ({ id, title, thumbnail, gitHubURL, siteURL }: Props) => {
   return (
-    <div className="border border-black rounded-xl overflow-hidden">
-      <img
-        src={src ?? 'https://source.unsplash.com/random'}
-        alt="チャットのサムネイル"
-        className="w-full h-[250px] object-cover"
-      />
-      <div className="p-4 space-y-4">
-        <h3 className="text-3xl">{title}</h3>
-        <div className="flex h-12 space-x-4">
+    <div className="container">
+      <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20">
+        <h2 className="text-9xl">{title}</h2>
+        <div className="mt-8 flex space-x-4">
           <a
-            href={gitHubURL ?? '#'}
-            className="flex items-center justify-center w-32 bg-black text-white  rounded-md space-x-2"
+            href={gitHubURL ?? ''}
+            className="flex items-center justify-center bg-black text-white text-2xl w-[150px] py-2 rounded-md space-x-2"
           >
-            <AiFillGithub className="w-7 h-7" />
+            <AiFillGithub />
             <span>GitHub</span>
           </a>
           <a
-            href={demoURL ?? '#'}
-            className="flex items-center justify-center w-32   rounded-md border border-black"
+            href={siteURL ?? ''}
+            className="block border border-black w-[150px] text-center text-2xl py-2 rounded-md uppercase"
           >
-            Demo
+            visit
           </a>
         </div>
+      </div>
+      <div className="absolute top-1/2 -translate-y-1/2 right-0">
+        <img
+          src={thumbnail ?? 'https://source.unsplash.com/random'}
+          alt="サムネイル"
+          className="w-[810px] h-[500px] object-cover"
+        />
+        <span className="absolute bottom-0 right-0 text-9xl text-white stroke-black">
+          {id < 10 && 0}
+          {id}
+        </span>
       </div>
     </div>
   );
