@@ -3,21 +3,30 @@ import cssLogo from '../assets/css-3.svg';
 import javascriptLogo from '../assets/javascript.svg';
 import typescriptLogo from '../assets/typescript-icon.svg';
 import reactLogo from '../assets/react.svg';
-import nextJsLogo from '../assets/nextjs-icon.svg';
+// import nextJsLogo from '../assets/nextjs-icon.svg';
+import nextJsLogo from '../assets/nextjs.svg';
 import tailwindLogo from '../assets/tailwindcss.svg';
 
 const Skills = () => {
   return (
-    <div className="absolute top-1/2 -translate-y-1/2 right-0 ">
-      <h3>Skills</h3>
-      <div className="grid grid-cols-3 gap-5">
-        <img src={htmlLogo} alt="" className="w-24 h-24" />
-        <img src={cssLogo} alt="" className="w-24 h-24" />
-        <img src={javascriptLogo} alt="" className="w-24 h-24" />
-        <img src={typescriptLogo} alt="" className="w-24 h-24" />
-        <img src={reactLogo} alt="" className="w-24 h-24" />
-        <img src={nextJsLogo} alt="" className="w-24 h-24" />
-        <img src={tailwindLogo} alt="" className="w-24 h-24" />
+    <div className="">
+      <h3 className="uppercase text-xl tracking-[12px] font-bold">Skills</h3>
+      <div className="grid grid-cols-3 gap-5 mt-8">
+        <img src={htmlLogo} alt="html-logo" className="skill-logo" />
+        <img src={cssLogo} alt="css-logo" className="skill-logo" />
+        <img
+          src={javascriptLogo}
+          alt="javascript-logo"
+          className="skill-logo p-0"
+        />
+        <img
+          src={typescriptLogo}
+          alt="typescript-logo"
+          className="skill-logo p-0"
+        />
+        <img src={reactLogo} alt="react-logo" className="skill-logo" />
+        <img src={nextJsLogo} alt="nextjs-logo" className="skill-logo" />
+        <img src={tailwindLogo} alt="tailwindcss-logo" className="skill-logo" />
       </div>
     </div>
   );
