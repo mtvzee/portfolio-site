@@ -12,7 +12,7 @@ const Project = ({ id, title, thumbnail, gitHubURL, siteURL }: Props) => {
   return (
     <div className="container">
       <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20">
-        <h2 className="text-9xl">{title}</h2>
+        <h2 className="text-9xl font-Archivo stroke-transparent">{title}</h2>
         <div className="mt-8 flex space-x-4">
           <a
             href={gitHubURL ?? ''}
@@ -33,9 +33,9 @@ const Project = ({ id, title, thumbnail, gitHubURL, siteURL }: Props) => {
         <img
           src={thumbnail ?? 'https://source.unsplash.com/random'}
           alt="サムネイル"
-          className="w-[810px] h-[500px] object-cover"
+          className="w-[810px] h-[500px] object-cover shadow-lg"
         />
-        <span className="absolute bottom-0 right-0 text-9xl text-white stroke-black">
+        <span className="absolute bottom-0 right-0 text-9xl stroke">
           {id < 10 && 0}
           {id}
         </span>
