@@ -10,7 +10,7 @@
 
 @layer components {
   .container {
-    @apply relative w-4/5 h-full mx-auto;
+    @apply relative w-4/5 h-full mx-auto overflow-hidden;
   }
   .hero-a {
     @apply border border-black p-4 flex items-center justify-between;
