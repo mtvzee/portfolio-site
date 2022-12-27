@@ -1,35 +1,14 @@
-import { Keyboard, Mousewheel } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import Hero from './components/Hero';
-import Header from './components/Header';
-import Project from './components/Project';
-import { projectData } from './data/projectData';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Swiper
-        tag="main"
-        direction={'vertical'}
-        slidesPerView={1}
-        speed={1000}
-        mousewheel={true}
-        keyboard={true}
-        modules={[Mousewheel, Keyboard]}
-        className="h-screen "
-      >
-        <SwiperSlide id="hero" tag="section" className="h-screen">
-          <Hero />
-        </SwiperSlide>
-        {projectData.map((data) => (
-          <SwiperSlide key={data.id} tag="section" className="h-screen">
-            <Project id={data.id} title={data.title} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 };
 
