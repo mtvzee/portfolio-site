@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-[#fff3f3];
+    @apply bg-[#ffffff];
   }
   .stroke {
     color: #000000;
@@ -23,5 +23,34 @@
   }
   .skill-logo {
     @apply w-24 h-24 shadow-md rounded-lg bg-white p-1;
+  }
+  .project-title {
+    @apply absolute text-9xl text-white font-Archivo stroke-transparent;
+  }
+}
+@layer utilities {
+  .project-title:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px blue;
+  }
+  .project-title:nth-child(2) {
+    color: blue;
+    height: 100%;
+    /* @apply animate-wave; */
+    /* animation: wave 8s ease-in-out infinite; */
+  }
+  .project-title:nth-child(3) {
+    color: blue;
+    height: 100%;
+    opacity: 60%;
+    /* animation: wave 2s ease-in-out infinite; */
+    /* @apply animate-wave; */
+  }
+  .project-title:nth-child(4) {
+    color: blue;
+    height: 100%;
+    opacity: 50%;
+    /* animation: wave 5s ease-in-out infinite; */
+    /* @apply animate-wave; */
   }
 }

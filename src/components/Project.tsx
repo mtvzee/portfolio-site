@@ -1,4 +1,5 @@
 import { AiFillGithub } from 'react-icons/ai';
+import ProjectTitle from './ProjectTitle';
 
 type Props = {
   id: number;
@@ -11,8 +12,8 @@ type Props = {
 const Project = ({ id, title, thumbnail, gitHubURL, siteURL }: Props) => {
   return (
     <div className="container">
-      <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20">
-        <h2 className="text-9xl font-Archivo stroke-transparent">{title}</h2>
+      <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20 w-full">
+        <ProjectTitle title={title} />
         <div className="mt-8 flex space-x-4">
           <a
             href={gitHubURL ?? ''}
