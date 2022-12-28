@@ -1,5 +1,6 @@
 import { AiFillGithub } from 'react-icons/ai';
 import ProjectTitle from './ProjectTitle';
+import { motion, Variants } from 'framer-motion';
 
 type Props = {
   id: number;
@@ -9,10 +10,28 @@ type Props = {
   siteURL?: string;
 };
 
+const textContainer: Variants = {
+  hidden: {
+    x: -500,
+    opacity: 0,
+    translateY: '-50%',
+  },
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 1, staggerChildren: 0.7, delayChildren: 0.2 },
+  },
+};
+
 const Project = ({ id, title, thumbnail, gitHubURL, siteURL }: Props) => {
   return (
     <div className="container">
-      <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20 w-full">
+      <motion.div
+        className="absolute top-1/2 -translate-y-1/2 left-0 z-20 w-full"
+        variants={textContainer}
+        initial="hidden"
+        whileInView="show"
+      >
         <ProjectTitle title={title} />
         <div className="mt-8 flex space-x-4">
           <a
@@ -29,7 +48,7 @@ const Project = ({ id, title, thumbnail, gitHubURL, siteURL }: Props) => {
             visit
           </a>
         </div>
-      </div>
+      </motion.div>
       <div className="absolute top-1/2 -translate-y-1/2 right-0">
         <img
           src={thumbnail ?? 'https://source.unsplash.com/random'}
