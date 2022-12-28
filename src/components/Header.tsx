@@ -11,9 +11,9 @@ const Header = () => {
         >
           MT
         </Link>
-        <ul className="flex h-full space-x-4">
-          <li className="leading-[88px]">
-            <Link to="/about" className="block">
+        <ul className="flex h-full space-x-4 text-2xl">
+          <li>
+            <Link to="/about" className="block leading-[88px]">
               About
             </Link>
           </li>
